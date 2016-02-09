@@ -20,7 +20,7 @@ MultiStringWidget - виджет для отображения и редакти
 * и зависимость
 ```json
     "require": {
-        "dowlatow/abstract-static-object": "dev-master"
+        "dowlatow/multi-string-widget": "dev-master"
     },
 ```
 2.2 Выполнить установку: ``composer install``

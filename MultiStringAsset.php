@@ -8,15 +8,15 @@ use yii\web\JqueryAsset;
 class MultiStringAsset extends AssetBundle
 {
     public $js = [
-        'multistring.js',
+        'js' . DIRECTORY_SEPARATOR . 'multistring.js',
     ];
 
     public function init()
     {
         parent::init();
 
-        $this->sourcePath = __DIR__ . DIRECTORY_SEPARATOR . 'assets';
-        $this->depends[] = JqueryAsset::className();
-        $this->depends[] = BootstrapThemeAsset::className();
+        $this->sourcePath = __DIR__ . DIRECTORY_SEPARATOR . 'source';
+        $this->depends[]  = JqueryAsset::className();
+        $this->depends[]  = BootstrapThemeAsset::className();
     }
 }

@@ -1,6 +1,6 @@
 {
   "name": "dowlatow/multi-string-widget",
-  "description": "Виджет",
+  "description": "MultiStringWidget - виджет для отображения и редактирования (добавление и удаление элементов  + редактирование значений пролей) списка строковых полей.",
   "type": "library",
   "license": "proprietary",
   "version": "dev-master",

@@ -1,6 +1,5 @@
 <?php
-
-namespace frontend\widgets\multiString;
+namespace dowlatow\widgets;
 
 
 use yii\helpers\ArrayHelper;

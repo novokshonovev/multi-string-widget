@@ -1,6 +1,5 @@
 <?php
-
-namespace frontend\widgets\multiString;
+namespace dowlatow\widgets;
 
 use yii\bootstrap\BootstrapThemeAsset;
 use yii\web\AssetBundle;

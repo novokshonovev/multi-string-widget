@@ -6,6 +6,7 @@ use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Json;
 use yii\widgets\InputWidget;
+use Yii;
 
 class MultiStringWidget extends InputWidget
 {
@@ -27,9 +28,28 @@ class MultiStringWidget extends InputWidget
     /** @var array */
     public $externalData = [];
 
+    public function registerTranslations()
+    {
+        $i18n = Yii::$app->i18n;
+
+        $i18n->translations['multistring'] = [
+            'class'          => 'yii\i18n\PhpMessageSource',
+            'sourceLanguage' => 'en',
+            'basePath'       => __DIR__ . DIRECTORY_SEPARATOR . 'messages',
+        ];
+    }
+
+    public static function t($category, $message, $params = [], $language = null)
+    {
+        return Yii::t('' . $category, $message, $params, $language);
+    }
+
+
     public function init()
     {
         parent::init();
+
+        $this->registerTranslations();
 
         if (isset($this->options['id']) && !$this->getId(false)) {
             $this->setId($this->options['id']);
@@ -98,7 +118,7 @@ class MultiStringWidget extends InputWidget
             $this->addLinkOptions['data-sample-item'] = $this->renderItem(null, null);
 
             echo Html::a(
-                Html::tag('span', '', ['class' => 'glyphicon glyphicon-plus']) . \Yii::t('common', 'Add...'),
+                Html::tag('span', '', ['class' => 'glyphicon glyphicon-plus']) . self::t('multistring', 'Add...'),
                 '#',
                 $this->addLinkOptions
             );

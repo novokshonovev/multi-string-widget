@@ -41,7 +41,7 @@ class MultiStringWidget extends InputWidget
 
     public static function t($category, $message, $params = [], $language = null)
     {
-        return Yii::t('' . $category, $message, $params, $language);
+        return Yii::t($category, $message, $params, $language);
     }
 
 
